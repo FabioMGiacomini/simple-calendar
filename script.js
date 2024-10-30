@@ -51,7 +51,8 @@ meseDurante.innerHTML = "&nbsp;" + Mese[mese] + "&nbsp;";
  ** per avere il mese giusto devo quindi sommare 1 a Mese[index]
  */
 
-annoPrima.addEventListener("click", function (ev) {
+if(annoPrima){
+    annoPrima.addEventListener("click", function (ev) {
   /* al clic su < diminuisco anno di uno
    ** e lo reinizializzo col nuovo contenuto (annoDurante.textContent)
    ** altrimenti funziona una volta sola poi dà NaN
@@ -60,9 +61,10 @@ annoPrima.addEventListener("click", function (ev) {
   annoDurante.innerHTML = "&nbsp;" + (anno - 1) + "&nbsp;";
   anno = new Date(annoDurante.textContent).getFullYear();
   giorniTabella()
-});
+    });
+}
 
-annoDopo.addEventListener("click", function (ev) {
+if(annoDopo) {annoDopo.addEventListener("click", function (ev) {
   ev.preventDefault();
   /* al clic su > aumento anno di uno e lo reinizializzo col nuovo contenuto
    ** e lo reinizializzo col nuovo contenuto (annoDurante.textContent)
@@ -72,6 +74,7 @@ annoDopo.addEventListener("click", function (ev) {
   anno = new Date(annoDurante.textContent).getFullYear();
   giorniTabella()
 });
+}
 
 mesePrima.addEventListener("click", function (ev) {
   ev.preventDefault();
