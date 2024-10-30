@@ -1,0 +1,42 @@
+.Tabella {border:1px; border-color: grey; background-color: transparent;}
+.tabella { border:none;}
+.tabellai { border:none; }
+.giorno { font-weight: bold; color: grey;}
+body { background:transparent; }
+.container{
+    width: 800px;
+    margin: 0 auto;    
+    display: flex;
+    flex-direction: column;
+}
+table{
+    margin-top: 50px;
+} 
+thead tr{
+    width: 100%; 
+}
+th{
+   text-align: left;
+}
+td{
+    padding: 20px 10px;
+}
+a,
+a:hover{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+.annoprima,
+.meseprima{
+    margin-right: 5px;
+}
+.annodopo,
+.mesedopo{
+    margin-left: 5px;
+}
+.annodurante,
+.mesecorrente{
+    padding-top: 7px;
+    width: 100px;
+}
