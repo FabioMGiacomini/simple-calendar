@@ -91,6 +91,18 @@ mesePrima.addEventListener("click", function (ev) {
     annoDurante.innerHTML = "&nbsp;" + (anno - 1) + "&nbsp;";
     anno = new Date(annoDurante.textContent).getFullYear();
   }
+  /**
+   * per andare indietro massimo di due mesi devo fare un check per vedere
+   * qual è il mese corrente quindi lo creo con getmonth() e gli tolgo uno
+   * poi lo confronto col mese visualizzato, se sono identici
+   * fermo la funzione
+   */
+  let mpNY = new Date()
+  let mpNM = mpNY.getMonth()-1
+  if(mese === mpNM){
+    mese += 1 
+  }
+
   meseDurante.innerHTML = "&nbsp;" + Mese[mese - 1] + "&nbsp;";
   mese -= 1;
   giorniTabella();
@@ -110,6 +122,19 @@ meseDopo.addEventListener("click", function (ev) {
     annoDurante.innerHTML = "&nbsp;" + (anno + 1) + "&nbsp;";
     anno = new Date(annoDurante.textContent, 0).getFullYear();
   }
+
+   /**
+   * per andare indietro massimo di due mesi devo fare un check per vedere
+   * qual è il mese corrente quindi lo creo con getmonth() e gli tolgo uno
+   * poi lo confronto col mese visualizzato, se sono identici
+   * fermo la funzione
+   */
+   let mpNY = new Date()
+   let mpNM = mpNY.getMonth()+1
+   if(mese === mpNM){
+     mese -= 1 
+   }
+
   meseDurante.innerHTML = "&nbsp;" + Mese[mese + 1] + "&nbsp;";
   mese += 1;
   giorniTabella();
@@ -131,13 +156,18 @@ meseDopo.addEventListener("click", function (ev) {
  * getDay() infatti ritorna il giorno della settimana partendo da 0 che è domenica
  */
 
+// inserisco i giorni in tabella
 function giorniTabella() {
-  let giorniMese = new Date(anno, mese + 1, 0).getDate();
-  let y = new Date(anno, mese, 1).getDay(); // output [0, 1, 2, 3, 4, 5, 6]
+  let giorniMese = new Date(anno, mese + 1, 0).getDate(); 
+  // quanti giorni ci sono nel mese in oggetto
+  
+  let y = new Date(anno, mese, 1).getDay(); 
+  // output [0, 1, 2, 3, 4, 5, 6] quale giorno della settimana - 0 domenica
+
   let corpoTabella = tableGiorni.querySelectorAll("tbody td");
   // inserisco in un array i td della tabella esclusi quelli in thead
 
-  // azzero i giorni. quando la funzione viene chiamata con le frecce
+  // azzero i giorni. quando cambio mese con le frecce
   // rimarrebbero i giorni dei mesi prima o dopo
   corpoTabella.forEach((element) => {
     element.innerHTML = "";
