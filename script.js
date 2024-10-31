@@ -91,17 +91,6 @@ mesePrima.addEventListener("click", function (ev) {
     annoDurante.innerHTML = "&nbsp;" + (anno - 1) + "&nbsp;";
     anno = new Date(annoDurante.textContent).getFullYear();
   }
-  /**
-   * per andare indietro massimo di due mesi devo fare un check per vedere
-   * qual è il mese corrente quindi lo creo con getmonth() e gli tolgo uno
-   * poi lo confronto col mese visualizzato, se sono identici
-   * fermo la funzione
-   */
-  let mpNY = new Date()
-  let mpNM = mpNY.getMonth()-1
-  if(mese === mpNM){
-    mese += 1 
-  }
 
   meseDurante.innerHTML = "&nbsp;" + Mese[mese - 1] + "&nbsp;";
   mese -= 1;
@@ -122,18 +111,6 @@ meseDopo.addEventListener("click", function (ev) {
     annoDurante.innerHTML = "&nbsp;" + (anno + 1) + "&nbsp;";
     anno = new Date(annoDurante.textContent, 0).getFullYear();
   }
-
-   /**
-   * per andare avanti massimo di due mesi devo fare un check per vedere
-   * qual è il mese corrente quindi lo creo con getmonth() e gli sommo uno
-   * poi lo confronto col mese visualizzato, se sono identici
-   * fermo la funzione togliendo uno al mese
-   */
-   let mpNY = new Date()
-   let mpNM = mpNY.getMonth()+1
-   if(mese === mpNM){
-     mese -= 1 
-   }
 
   meseDurante.innerHTML = "&nbsp;" + Mese[mese + 1] + "&nbsp;";
   mese += 1;
