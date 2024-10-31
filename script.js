@@ -124,10 +124,10 @@ meseDopo.addEventListener("click", function (ev) {
   }
 
    /**
-   * per andare indietro massimo di due mesi devo fare un check per vedere
-   * qual è il mese corrente quindi lo creo con getmonth() e gli tolgo uno
+   * per andare avanti massimo di due mesi devo fare un check per vedere
+   * qual è il mese corrente quindi lo creo con getmonth() e gli sommo uno
    * poi lo confronto col mese visualizzato, se sono identici
-   * fermo la funzione
+   * fermo la funzione togliendo uno al mese
    */
    let mpNY = new Date()
    let mpNM = mpNY.getMonth()+1
