@@ -1,3 +1,23 @@
+/**
+ * creo la struttura della tabella in modo dinamico
+ */
+
+let tableGiorni = document.querySelector("table.giorni");
+const bodyTabella = tableGiorni.querySelector('tbody')
+
+function creaTabella() {
+  for (let riga = 0; riga < 6; riga++) {
+  let rigaTabella = document.createElement('tr')
+  for (let cella = 1; cella < 8; cella++) {
+    let cellaTabella = document.createElement('td')
+    rigaTabella.appendChild(cellaTabella)
+  }
+  bodyTabella.appendChild(rigaTabella)
+ }
+}
+creaTabella()
+
+
 let d = new Date();
 let giorno = d.getDate(); // data di oggi da 1 a 31
 let mese = d.getMonth(); // mese corrente da 0 a 11
@@ -40,8 +60,7 @@ let annoDurante = document.querySelector("span.annodurante");
 let annoDopo = document.querySelector("a.annodopo");
 let mesePrima = document.querySelector("a.meseprima");
 let meseDurante = document.querySelector(".mesecorrente");
-let meseDopo = document.querySelector("a.mesedopo");
-let tableGiorni = document.querySelector("table.giorni");
+let meseDopo = document.querySelector("a.mesedopo"); 
 
 annoDurante.innerHTML = "&nbsp;" + anno + "&nbsp;";
 meseDurante.innerHTML = "&nbsp;" + Mese[mese] + "&nbsp;";
