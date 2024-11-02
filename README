@@ -1,7 +1,7 @@
 # Calendario
 
-### Calendario completo, tutti i mesi e gli anni
+### Calendario completo in javascript
 ---
 
 Il calendario visualizza tutti gli anni e tutti i mesi
-Funziona solo con le frecce non con la tastiera.
+La tabella è creata dinamicamente dallo script JS
